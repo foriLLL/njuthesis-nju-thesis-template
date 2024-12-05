@@ -208,69 +208,96 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 学位论文的正文应以《绪论》作为第一章
-\chapter{绪论}
-\section{引用参考文献示例}\label{chapter_introduction}
-使用.bib文件管理参考文献引用，引用示例：\cite{BHR12}.\par
+\chapter{引言}
+\section{研究背景}
+\section{研究问题}
+\section{主要工作}
+\section{论文结构}
+
+\chapter{背景与相关工作}
+
+\section{代码合并算法}
+\subsection{结构化合并算法}
+\subsection{半结构化合并算法}
+\subsection{非结构化合并算法}
+
+\subsection{基于学习的代码合并方法}
+\subsubsection{生成式代码合并方法}
+\subsubsection{判别式代码合并方法}
 
 
-\chapter{算法示例}
+\section{代码变更嵌入}
+\subsection{显式信息交互的代码变更嵌入}
+\subsection{隐式信息交互的代码变更嵌入}
 
-\begin{algorithm}[htbp]
-  \caption{算法名字}
-  \label{alg:alg1}
-  \begin{algorithmic}[1]
-        \REQUIRE 这是输入
-        \ENSURE 这是输出
-        \WHILE {flag}
-		      \STATE 这是语句
-        \ENDWHILE
-  \end{algorithmic}
-\end{algorithm}
+\section{预训练模型在代码分析中的应用}
+% 讨论CodeBERTa等预训练模型在代码表示和分析中的应用
+\section{序列模型在代码处理中的应用}
+% 介绍LSTM等序列模型在代码变化和序列预测任务中的应用
+
+\chapter{代码合并冲突中编辑脚本的实证研究}
+\section{研究动机}
+\section{相关方法和定义}
+\section{数据收集与预处理}
+% 描述如何收集代码合并冲突数据，以及编辑脚本的生成和处理方法
+\subsection{代码合并冲突的收集}
+\subsection{数据集的选取}
+% 这里还可以说有很多数据集的实验
+\subsection{编辑脚本的生成和处理方式}
+\subsubsection{diff算法的选取对编辑脚本的影响}
+
+\section{编辑脚本的统计分析}
+% 对编辑脚本的特征进行统计分析，发现常见模式和规律
+\subsection{dirty Git 对历史冲突的效果}
+\subsection{分析冲突中接纳编辑解决的接近上界}
+\subsection{机器学习的预测效果}
+\section{结论与启示}
+% 总结实证研究的发现，为后续模型的设计提供依据
 
 
-\chapter{插图示例}
+\chapter{基于编辑脚本的代码合并方法}
+\section{总体架构设计}
+% 介绍基于编辑脚本的代码合并方法的整体框架
+\section{代码变更嵌入模型}
+% 详细说明如何使用CodeBERTa对代码变更进行嵌入，包括预处理、序列拼接和特殊标记的处理
+\section{LSTM分类器的设计与实现}
+% 描述LSTM模型的结构、输入输出和训练目标
+\section{模型训练与优化}
+\subsection{训练策略}
+% 介绍训练过程中的细节，如损失函数、优化器和学习率设置
+\subsection{多GPU并行训练}
+% 解释如何使用DistributedDataParallel进行分布式训练，以及遇到的问题和解决方案
+\subsection{模型的正则化与超参数调整}
+% 讨论为防止过拟合所采取的措施，如Dropout、权重衰减等
+\section{模型的分层学习率策略}
+% 说明在模型训练中对预训练模型和新层采用不同学习率的原因和方法
+\chapter{实验与结果分析}
+\section{实验设置}
+\subsection{数据集划分}
+% 说明训练集、验证集和测试集的划分方式
+\subsection{评价指标}
+% 介绍用于评估模型性能的指标，如准确率、损失等
+\section{实验结果}
+\subsection{训练过程分析}
+% 展示训练和验证过程中损失和准确率的变化趋势图
+\subsection{模型性能评估}
+% 给出模型在测试集上的最终表现，比较不同参数设置下的效果
+\section{消融实验}
+% 通过移除或替换模型的某些组件，分析其对整体性能的影响
+\section{结果讨论}
+% 讨论测试损失不再下降的原因，以及可能的改进措施
+\chapter{总结与展望}
+\section{研究总结}
+% 回顾全文，概括主要的研究工作和成果
+\section{研究贡献}
+% 强调本研究的创新点和对领域的贡献
+\section{未来工作}
+% 展望后续可以开展的研究方向，如改进模型、扩展应用场景等
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.6\linewidth]{./figure/github.jpg}
-  \caption{单图示例}
-  \label{fig:system}
-\end{figure}
 
-实验硬件设备如图\ref{img:1}所示。
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.5\textwidth}
-\centering
-\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
-\caption{实验硬件设备总览}
-\label{img:1}
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-\centering
-\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
-\caption{实验测量示意图}
-\label{img:2}
-\end{minipage}
-\end{figure}
 
-图\ref{fig:sub}所示子图\ref{subfig:a}和子图\ref{subfig:b}。
-\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
-		\caption{子图}
-		\label{subfig:a}
-	\end{subfigure}
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
-		\caption{子图}
-		\label{subfig:b}
-	\end{subfigure}
-\caption{子图样例}
-\label{fig:sub}
-\end{figure}
 
+\chapter{总结与展望}
 
 
 
